@@ -18,7 +18,7 @@ npx @next/codemod@canary next-async-request-api . --force
 
 Context MDX `content/hello-world.mdx`
 
-```bash
+```mdx
 ---
 title: "Hello World"
 date: "2024-11-12"
@@ -36,7 +36,7 @@ This is a sample MDX file. It contains JSX and markdown content.
 
 Components `components/mdx/youtube.tsx`
 
-```bash
+```tsx
 const YouTube = ({ videoId }: { videoId: string }) => {
   const videoSrc = `https://www.youtube.com/embed/${videoId}`
   return (
@@ -55,7 +55,7 @@ export default YouTube
 
 Blog List - `app/blog/page.tsx`
 
-```bash
+```tsx
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -111,7 +111,7 @@ export default function Blog() {
 
 Blog Post `app/blog/[slug]/page.tsx`
 
-```bash
+```tsx
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
