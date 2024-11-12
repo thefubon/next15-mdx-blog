@@ -16,7 +16,7 @@ npx @next/codemod@canary next-async-request-api . --force
 
 ## Pages
 
-Context MDX `content/hello-world.mdx`
+Context MDX: `content/hello-world.mdx`
 
 ```mdx
 ---
@@ -34,7 +34,7 @@ This is a sample MDX file. It contains JSX and markdown content.
 <YouTube videoId="_PoawhlC9o4" />
 ```
 
-Components `components/mdx/youtube.tsx`
+Components: `components/mdx/youtube.tsx`
 
 ```tsx
 const YouTube = ({ videoId }: { videoId: string }) => {
@@ -53,7 +53,7 @@ const YouTube = ({ videoId }: { videoId: string }) => {
 export default YouTube
 ```
 
-Blog List - `app/blog/page.tsx`
+Blog List: `app/blog/page.tsx`
 
 ```tsx
 import fs from 'fs'
@@ -109,7 +109,7 @@ export default function Blog() {
 }
 ```
 
-Blog Post `app/blog/[slug]/page.tsx`
+Blog Post: `app/blog/[slug]/page.tsx`
 
 ```tsx
 import fs from 'fs'
