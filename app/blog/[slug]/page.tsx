@@ -1,9 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import YouTube from '@/components/mdx/youtube'
-import Link from 'next/link'
+import Vimeo from '@/components/mdx/vimeo'
 
 async function getPost(slug: string) {
   const markdownFile = fs.readFileSync(
@@ -35,6 +36,7 @@ export default async function Page(url: { params: Promise<{ slug: string }> }) {
   // MDX Custom Components
   const components = {
     YouTube,
+    Vimeo,
   }
 
   return (
