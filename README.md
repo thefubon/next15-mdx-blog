@@ -14,7 +14,7 @@ pnpm i gray-matter next-mdx-remote path fs
 npx @next/codemod@canary next-async-request-api . --force
 ```
 
-### Files
+## Pages
 
 Context MDX `content/hello-world.mdx`
 
