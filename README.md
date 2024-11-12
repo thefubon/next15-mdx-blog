@@ -91,8 +91,6 @@ export default function Blog() {
 
   return (
     <section className="container py-10 space-y-10">
-      <h2>Blog List</h2>
-
       {blogs.map((blog) => (
         <div
           key={blog.slug}
@@ -107,6 +105,7 @@ export default function Blog() {
     </section>
   )
 }
+
 ```
 
 Blog Post: `app/blog/[slug]/page.tsx`
@@ -119,14 +118,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import YouTube from '@/components/mdx/youtube'
 import Link from 'next/link'
 
-// Контент для этих страниц будет получен с помощью функции getPost.
-// Эта функция вызывается во время сборки.
-// Она возвращает содержимое поста с соответствующим slug.
-// Она также возвращает сам slug, который Next.js будет использовать для определения того, какую страницу рендерить во время сборки.
-//Например, { props: { slug: "my-first-post", content: "..." } }
-async function getPost({ slug }: { slug: string }) {
+async function getPost(slug: string) {
   const markdownFile = fs.readFileSync(
-    path.join('content', slug + '.mdx'),
+    path.join('content', `${slug}.mdx`),
     'utf-8'
   )
   const { data: frontMatter, content } = matter(markdownFile)
@@ -137,10 +131,6 @@ async function getPost({ slug }: { slug: string }) {
   }
 }
 
-// generateStaticParams генерирует статические пути для записей блога.
-// Эта функция вызывается во время сборки.
-// Она возвращает массив возможных значений для slug.
-// Например, [{ params: { slug: "my-first-post" } }, { params: { slug: "my-second-post" } } }]
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join('content'))
   const params = files.map((filename) => ({
@@ -150,18 +140,12 @@ export async function generateStaticParams() {
   return params
 }
 
-export default async function Page(slug: {
-  params: Promise<{ slug: string }>
-}) {
-  const params = await slug.params
-  // Параметр содержит пост `slug`.
+export default async function Page(url: { params: Promise<{ slug: string }> }) {
+  const params = await url.params
+  const { slug } = params
+  const props = await getPost(slug)
 
-  // Получение содержимого поста на основе slug
-  const props = await getPost(params)
-
-  // Настройте компоненты для рендеринга MDX.
-  // Например, компонент Code будет отображать блоки кода с подсветкой синтаксиса.
-  // Компонент YouTube будет отображать видеоролики YouTube.
+  // MDX Custom Components
   const components = {
     YouTube,
   }
