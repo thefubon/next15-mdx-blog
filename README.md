@@ -6,7 +6,7 @@ Next 15.0.3 | React 19.0.0 | TailwindCSS 3.4.14 | ESlint 9.14.0 | PNPM
 - [x] NDX Blog
 - [ ] Tailwind 4
 
-[https://github.com/thefubon/next15-mdx-blog/blob/main/CHANGELOG.md](VIEW CHANGELOG)
+[VIEW CHANGELOG](https://github.com/thefubon/next15-mdx-blog/blob/main/CHANGELOG.md)
 
 ## Install Package
 
