@@ -33,8 +33,6 @@ export default function Blog() {
 
   return (
     <section className="container py-10 space-y-10">
-      <h2>Blog List</h2>
-
       {blogs.map((blog) => (
         <div
           key={blog.slug}
