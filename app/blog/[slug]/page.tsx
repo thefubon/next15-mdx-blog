@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import YouTube from '@/components/mdx/youtube'
+import Link from 'next/link'
 
 // Контент для этих страниц будет получен с помощью функции getPost.
 // Эта функция вызывается во время сборки.
@@ -52,12 +53,21 @@ export default async function Page(slug: {
   }
 
   return (
-    <article className="prose prose-sm md:prose-base lg:prose-lg mx-auto">
-      <h1>{props.frontMatter.title}</h1>
-      <MDXRemote
-        source={props.content}
-        components={components}
-      />
-    </article>
+    <>
+      <Link
+        className="px-4 py-2 inline-block rounded-lg border my-4 ml-4"
+        href="/blog">
+        Назад
+      </Link>
+
+      <article className="prose prose-sm md:prose-base lg:prose-lg mx-auto dark:prose-invert">
+        <h1>{props.frontMatter.title}</h1>
+        <p>{props.frontMatter.description}</p>
+        <MDXRemote
+          source={props.content}
+          components={components}
+        />
+      </article>
+    </>
   )
 }
