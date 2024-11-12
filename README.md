@@ -8,6 +8,14 @@ Next 15.0.3 | React 19.0.0 | TailwindCSS 3.4.14 | ESlint 9.14.0 | PNPM
 
 [VIEW CHANGELOG](https://github.com/thefubon/next15-mdx-blog/blob/main/CHANGELOG.md)
 
+### MDX Components
+
+```mdx
+<YouTube videoId="2aocIrQCkE4" />
+
+<Vimeo videoId="371621457" />
+```
+
 ## Install Package
 
 ```bash
