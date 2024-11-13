@@ -11,7 +11,7 @@ Next 15.0.3 | React 19.0.0 | TailwindCSS 3.4.14 | ESlint 9.14.0 | PNPM
 ### MDX Components
 
 ```mdx
-<YouTube videoId="2aocIrQCkE4" />
+<YouTube videoId="7POPN7BD5MI" />
 
 <Vimeo videoId="371621457" />
 ```
