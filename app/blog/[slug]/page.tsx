@@ -40,9 +40,9 @@ export default async function Page(url: { params: Promise<{ slug: string }> }) {
   }
 
   return (
-    <div className="py-10">
+    <div className="p-10">
       <Link
-        className="px-4 py-2 inline-block rounded-lg border ml-4"
+        className="px-4 py-2 inline-block rounded-lg border mb-4"
         href="/blog">
         Назад
       </Link>
