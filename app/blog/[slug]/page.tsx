@@ -40,13 +40,12 @@ export default async function Page(url: { params: Promise<{ slug: string }> }) {
   }
 
   return (
-    <>
+    <div className="py-10">
       <Link
-        className="px-4 py-2 inline-block rounded-lg border my-4 ml-4"
+        className="px-4 py-2 inline-block rounded-lg border ml-4"
         href="/blog">
         Назад
       </Link>
-
       <article className="prose prose-sm md:prose-base lg:prose-lg mx-auto dark:prose-invert">
         <h1>{props.frontMatter.title}</h1>
         <p>{props.frontMatter.description}</p>
@@ -55,6 +54,6 @@ export default async function Page(url: { params: Promise<{ slug: string }> }) {
           components={components}
         />
       </article>
-    </>
+    </div>
   )
 }
